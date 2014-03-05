@@ -19,7 +19,7 @@
     under the License.
 */
 
-package de.appplant.cordova.plugin.localnotification;
+package cn.cordova.plugin.localnotification;
 
 import java.util.Calendar;
 import java.util.Date;
