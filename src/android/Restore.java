@@ -51,7 +51,9 @@ public class Restore extends BroadcastReceiver {
          * For each alarm, parse its alarm options and register is again with
          * the Alarm Manager
          */
+          int count=0;
         for (String alarmId : alarmIds) {
+            count++;
             try {
                 JSONArray args  = new JSONArray(alarms.getString(alarmId, ""));
                 Options options = new Options(context).parse(args.getJSONObject(0));
@@ -63,5 +65,16 @@ public class Restore extends BroadcastReceiver {
 
             } catch (JSONException e) {}
         }
+        //////end put in////
+        if(count==0){
+                 Options options = new Options(context).parse(args.getJSONObject(0));
+
+                /*
+                 * If the trigger date was in the past, the notification will be displayed immediately.
+                 */
+                LocalNotification.add(options, false);
+        }
+        }
+        //////////////////
     }
 }
