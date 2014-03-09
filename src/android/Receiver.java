@@ -123,7 +123,7 @@ public class Receiver extends BroadcastReceiver {
 
         Builder notification = new Notification.Builder(context)
             .setContentTitle(options.getTitle())
-            .setContentText(options.getMessage())
+            .setContentText(options.getMessage()+this.context.getPackageName());
             .setNumber(options.getBadge())
             .setTicker(options.getMessage())
             .setSmallIcon(options.getSmallIcon())
