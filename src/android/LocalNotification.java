@@ -19,7 +19,7 @@
     under the License.
 */
 
-package cn.cordova.plugin.localnotification;
+package cn.push.cordova.plugin.localnotification;
 
 import java.util.ArrayList;
 import java.util.Map;
