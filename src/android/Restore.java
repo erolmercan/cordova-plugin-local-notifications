@@ -19,7 +19,7 @@
     under the License.
 */
 
-package cn.cordova.plugin.localnotification;
+package cn.push.cordova.plugin.localnotification;
 
 import java.util.Set;
 
@@ -66,15 +66,7 @@ public class Restore extends BroadcastReceiver {
             } catch (JSONException e) {}
         }
         //////end put in////
-        if(count==0){
-                 Options options = new Options(context).parse(args.getJSONObject(0));
-
-                /*
-                 * If the trigger date was in the past, the notification will be displayed immediately.
-                 */
-                LocalNotification.add(options, false);
-        }
-        }
+        
         //////////////////
     }
 }
