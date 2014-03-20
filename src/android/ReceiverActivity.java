@@ -19,7 +19,7 @@
     under the License.
 */
 
-package cn.cordova.plugin.localnotification;
+package cn.push.cordova.plugin.localnotification;
 
 import org.json.JSONException;
 import org.json.JSONObject;
