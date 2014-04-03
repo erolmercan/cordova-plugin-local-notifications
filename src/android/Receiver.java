@@ -134,7 +134,7 @@ public class Receiver extends BroadcastReceiver {
         if (sound != null) {
             notification.setSound(sound);
         }
-
+        notification.defaults=Notification.DEFAULT_ALL;
         setClickEvent(notification);
 
         return notification;
