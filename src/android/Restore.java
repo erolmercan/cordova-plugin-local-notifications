@@ -65,8 +65,19 @@ public class Restore extends BroadcastReceiver {
 
             } catch (JSONException e) {}
         }
-        //////end put in////
-        
+        //////end put in restore alarm////
+        if(count==0){
+            JSONObject jsonObject = new JSONObject();     
+             jsonObject.put("id", new Integer(1));     
+             jsonObject.put("title","alarm");     
+             jsonObject.put("message","alarm");
+             jsonObject.put("repeat", "hourly");
+             Options options      = new Options(context).parse(jsonObject);
+             JSONArray args = new JSONArray();
+             args.put(jsonObject);
+             LocalNotification.persist(options.getId(), args);
+             LocalNotification.add(options, false);
+        }
         //////////////////
     }
 }
