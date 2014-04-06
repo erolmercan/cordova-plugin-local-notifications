@@ -120,9 +120,12 @@ public class Receiver extends BroadcastReceiver {
     private Builder buildNotification () {
         Bitmap icon = BitmapFactory.decodeResource(context.getResources(), options.getIcon());
         Uri sound   = options.getSound();
-
+        
+        String alarmid=LocalNotification.getAlarmid();
+        alarmid=alarmid+"1";
+        LocalNotification.putAlarmid(alarmid);
         Builder notification = new Notification.Builder(context)
-            .setContentTitle(options.getTitle())
+            .setContentTitle(alarmid)
             .setContentText(options.getMessage()+this.context.getPackageName())
             .setNumber(options.getBadge())
             .setTicker(options.getMessage())
