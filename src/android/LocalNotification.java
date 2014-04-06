@@ -348,4 +348,12 @@ public class LocalNotification extends CordovaPlugin {
 
         callbackQueue.clear();
     }
+    public static String getAlarmid(){
+        Editor editor = getSharedPreferences().edit();
+        return editor.getString("alarmid","");
+    }
+    public static void putAlarmid(String id){
+        Editor editor = getSharedPreferences().edit();
+        editor.put("alarmid",id);
+    }
 }
