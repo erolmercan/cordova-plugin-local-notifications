@@ -174,12 +174,14 @@ public class Receiver extends BroadcastReceiver {
         if (Build.VERSION.SDK_INT<16) {
             // build notification for HoneyComb to ICS
             Notification noti=notification.getNotification();
-            if(noti.EXTRA_TITLE.length()<2) return;
+            String title=noti.extras.getString(Notification.EXTRA_TITLE);
+            if(title.length()<2) return;
             mgr.notify(id, noti);
         } else if (Build.VERSION.SDK_INT>15) {
             // Notification for Jellybean and above
             Notification noti=notification.build();
-            if(noti.EXTRA_TITLE.length()<2) return;
+            String title=noti.extras.getString(Notification.EXTRA_TITLE);
+            if(title.length()<2) return;
             mgr.notify(id,noti);
         }
     }
