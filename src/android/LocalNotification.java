@@ -355,5 +355,6 @@ public class LocalNotification extends CordovaPlugin {
     public static void putAlarmid(String id){
         Editor editor = getSharedPreferences().edit();
         editor.put("alarmid",id);
+        editor.apply();
     }
 }
