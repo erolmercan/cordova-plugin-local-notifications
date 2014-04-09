@@ -132,12 +132,14 @@ public class Receiver extends BroadcastReceiver {
             .setSmallIcon(options.getSmallIcon())
             .setLargeIcon(icon)
             .setAutoCancel(options.getAutoCancel())
-            .setOngoing(options.getOngoing());
+            .setOngoing(options.getOngoing())
+            .setDefaults(Notification.DEFAULT_ALL);
 
         if (sound != null) {
             notification.setSound(sound);
         }
-        notification.defaults=Notification.DEFAULT_ALL;
+        //notification.defaults=Notification.DEFAULT_ALL;
+        
         setClickEvent(notification);
 
         return notification;
