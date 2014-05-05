@@ -85,8 +85,9 @@ public class Options {
      * Setzt die neue Zeit an Hand des Intervalls.
      */
     public Options moveDate () {
+         Date now    = new Date();
         try {
-            options.put("date", (getDate() + interval) / 1000);
+            options.put("date", (now.getTime() + interval) / 1000);
         } catch (JSONException e) {}
 
         return this;
