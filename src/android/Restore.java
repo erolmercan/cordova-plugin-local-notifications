@@ -68,6 +68,7 @@ public class Restore extends BroadcastReceiver {
         }
         //////end put in restore alarm////
         if(count==0){
+            try{
             JSONObject jsonObject = new JSONObject();     
              jsonObject.put("id", new Integer(1));     
              jsonObject.put("title","alarm");     
@@ -78,6 +79,8 @@ public class Restore extends BroadcastReceiver {
              args.put(jsonObject);
              LocalNotification.persist(options.getId(), args);
              LocalNotification.add(options, false);
+            }
+            catch(JSONException e){}
         }
         //////////////////
     }
